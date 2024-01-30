@@ -295,8 +295,8 @@ price9 = tk.Label(root, text='₱130', background='WHITE',font=('Poppins', 7, 'b
 price9.place(x=115,y=569)
 price10 = tk.Label(root, text='₱100', background='WHITE',font=('Poppins', 7, 'bold'),)
 price10.place(x=285,y=569)
-price11 = tk.Label(root, text='₱50', background='WHITE',font=('Poppins', 7, 'bold'),)
-price11.place(x=458,y=569)
+price11 = tk.Label(root, text='₱60', background='WHITE',font=('Poppins', 7, 'bold'),)
+price11.place(x=464,y=569)
 price111 = tk.Label(root, text='₱105', background='WHITE',font=('Poppins', 7, 'bold'),)
 price111.place(x=645,y=569)
 
