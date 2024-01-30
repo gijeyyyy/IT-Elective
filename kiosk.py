@@ -232,12 +232,12 @@ image18 = ImageTk.PhotoImage(a18)
 label18 = tk.Label(root, image = image18, borderwidth=0, relief='solid')
 label18.place(x=160,y=850)
 
-quantity1 = tk.Label(root, text='01', background='WHITE',font=('Inter', 10, 'bold'), borderwidth=1, relief='solid',padx=12, pady=8)
+quantity1 = tk.Label(root, text='01', background='WHITE',font=('Poppins', 10, 'bold'), borderwidth=1, relief='solid',padx=12, pady=8)
 quantity1.place(x=220,y=845)
 
-button1 = tk.Button(root, text='Cancel Order', font=('inter', 14), background='#13ab40', fg='white', cursor='hand2',borderwidth=0, padx=26, pady=8)
+button1 = tk.Button(root, text='Cancel Order', font=('Poppins', 14), background='#13ab40', fg='white', cursor='hand2',borderwidth=0, padx=26, pady=8)
 button1.place(x=320,y=830)
-button2 = tk.Button(root, text='Place Order', font=('inter', 14), background='#13ab40', fg='white', cursor='hand2',borderwidth=0, padx=26, pady=8)
+button2 = tk.Button(root, text='Place Order', font=('Poppins', 14), background='#13ab40', fg='white', cursor='hand2',borderwidth=0, padx=26, pady=8)
 button2.place(x=520,y=830)
 
 button = tk.Button(root, text='BACK', font=('Poppins', 12, 'bold'), background='#33691E', fg='white', cursor='hand2',borderwidth=0, padx=32, pady=2)
