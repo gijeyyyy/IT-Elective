@@ -170,18 +170,45 @@ label151 = tk.Label(root, image = image151, borderwidth=1, relief='flat', bg='#f
 label151.place(x=540,y=670.5)
 
 
+# meals = tk.Label(root, text='MEALS', borderwidth=1,relief='solid', padx=15,pady=2, font=('Poppins', 12, 'bold'), background='WHITE', fg='black', cursor='hand2')
+# meals.place(x=10,y=216)
+# appe = tk.Label(root, text='APPETIZERS', borderwidth=1,relief='solid', padx=15,pady=2, font=('Poppins', 12, 'bold'), background='WHITE', fg='black', cursor='hand2')
+# appe.place(x=102,y=216)
+# drinks = tk.Label(root, text='DRINKS', borderwidth=1,relief='solid', padx=15,pady=2, font=('Poppins', 12, 'bold'), background='WHITE', fg='black', cursor='hand2')
+# drinks.place(x=240,y=216)
+# desserts = tk.Label(root, text='DESSERTS', borderwidth=1,relief='solid', padx=13,pady=2, font=('Poppins', 12, 'bold'), background='WHITE', fg='black', cursor='hand2')
+# desserts.place(x=342,y=216)
+# snacks = tk.Label(root, text='SNACKS', borderwidth=1,relief='solid', padx=15,pady=2, font=('Poppins', 12, 'bold'), background='WHITE', fg='black', cursor='hand2')
+# snacks.place(x=465,y=216)
 
 
-meals = tk.Label(root, text='MEALS', borderwidth=1,relief='solid', padx=15,pady=2, font=('Poppins', 12, 'bold'), background='WHITE', fg='black', cursor='hand2')
-meals.place(x=10,y=216)
-appe = tk.Label(root, text='APPETIZERS', borderwidth=1,relief='solid', padx=15,pady=2, font=('Poppins', 12, 'bold'), background='WHITE', fg='black', cursor='hand2')
-appe.place(x=102,y=216)
-drinks = tk.Label(root, text='DRINKS', borderwidth=1,relief='solid', padx=15,pady=2, font=('Poppins', 12, 'bold'), background='WHITE', fg='black', cursor='hand2')
-drinks.place(x=240,y=216)
-desserts = tk.Label(root, text='DESSERTS', borderwidth=1,relief='solid', padx=13,pady=2, font=('Poppins', 12, 'bold'), background='WHITE', fg='black', cursor='hand2')
-desserts.place(x=342,y=216)
-snacks = tk.Label(root, text='SNACKS', borderwidth=1,relief='solid', padx=15,pady=2, font=('Poppins', 12, 'bold'), background='WHITE', fg='black', cursor='hand2')
-snacks.place(x=465,y=216)
+# Store labels for reference
+labels = []
+
+# Labels with click effects
+for text, x_position in [('MEALS', 10), ('APPETIZERS', 102), ('DRINKS', 240), ('DESSERTS', 340), ('SNACKS', 464)]:
+    label = tk.Label(root, text=text, borderwidth=1, relief='solid', padx=15, pady=2, font=('Poppins', 12, 'bold'), background='WHITE', fg='black', cursor='hand2')
+    label.place(x=x_position, y=216)
+    labels.append(label)
+
+# Reset all labels to their original colors
+def reset_colors():
+    for label in labels:
+        label.config(background='WHITE', fg='BLACK')
+
+# Change the color of a label on click, resetting if already selected
+def change_color(label):
+    current_bg = label.cget('background')  # Retrieve current background color
+    if current_bg == '#33691E':  # Check if already selected
+        label.config(background='WHITE', fg='BLACK')  # Return to original colors
+    else:
+        reset_colors()  # Reset all labels
+        label.config(background='#33691E', fg='WHITE')  # Highlight the clicked label
+
+# Connect click events to each label
+for label in labels:
+    label.bind('<Button-1>', lambda e, l=label: change_color(l))
+
 
 placeorder = tk.Label(root, text='PLACE ORDER - DINE IN', background='#13ab40',font=('Poppins', 10, 'bold'), width=700,padx=12,pady=4, anchor='w')
 placeorder.place(x=0,y=780)
@@ -213,7 +240,7 @@ button1.place(x=320,y=830)
 button2 = tk.Button(root, text='Place order', font=('inter', 14), background='#13ab40', fg='white', cursor='hand2',borderwidth=0, padx=26, pady=8)
 button2.place(x=520,y=830)
 
-button = tk.Button(root, text='Back', font=('inter', 12, 'bold'), background='#13ab40', fg='white', cursor='hand2',borderwidth=0, padx=32, pady=2)
+button = tk.Button(root, text='BACK', font=('Poppins', 12, 'bold'), background='#33691E', fg='white', cursor='hand2',borderwidth=0, padx=32, pady=2)
 button.pack(side=tk.TOP,anchor=tk.NE, padx=10, pady=10)
 
 
